@@ -1,0 +1,1734 @@
+C# (C-Sharp) 
+=============
+
+14/12/2024:
+===========
+
+C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.
+
+C# is used to develop web apps, desktop apps, mobile apps, games and much more.
+
+An IDE (Integrated Development Environment) is used to edit and compile code.
+
+====================================================================================================
+
+
+Key Features of C#:
+
+    Object-Oriented:
+        Supports concepts like classes, objects, inheritance, polymorphism, encapsulation, and abstraction.
+
+    Type-Safe:
+        Helps prevent errors by ensuring that variables and methods are used only in ways they are intended.
+
+    Versatile:
+        Can be used to build desktop applications, web apps, mobile apps, games (using Unity), and cloud services.
+
+    Rich Library Support:
+        The .NET framework provides a vast collection of libraries for handling tasks like file I/O, networking, database access, and more.
+
+    Cross-Platform:
+        With .NET Core and .NET 5/6/7, C# supports cross-platform development, allowing applications to run on Windows, macOS, and Linux.
+
+    Automatic Garbage Collection:
+        Memory management is handled automatically by the .NET runtime, which removes unused objects from memory.
+
+    Easy to Learn:
+        C# syntax is simple and resembles languages like C, C++, and Java, making it beginner-friendly.
+
+    Modern Features:
+        C# has features like LINQ (Language-Integrated Query), asynchronous programming (async/await), and pattern matching, which make coding more efficient.
+
+
+=============================================================================================================================
+
+Where is C# Used?
+
+    Windows Applications:
+        Build GUI applications using frameworks like Windows Forms or WPF (Windows Presentation Foundation).
+
+    Web Development:
+        Create dynamic websites and APIs using ASP.NET Core.
+
+    Game Development:
+        Popular in game development with the Unity engine.
+
+    Mobile Development:
+        Create cross-platform mobile apps using Xamarin or .NET MAUI.
+
+    Cloud Applications:
+        Develop scalable cloud-based solutions using Azure services.
+
+    IoT and AI:
+        C# supports IoT development and can be used with AI tools and libraries.
+
+===============================================================================================================================
+
+using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.Write("Hello World!"); 
+      Console.WriteLine("Hello World!"); 
+       Console.Write("Hello World!"); 
+    }
+  }
+}
+============================================================================================================================
+using System;
+
+    The using keyword includes namespaces that provide access to classes and methods in the .NET Framework.
+    System is a namespace containing basic functionalities, like input/output operations (Console is part of this namespace).
+
+
+namespace HelloWorld
+
+    A namespace is a way to organize code into logical groups and avoid name conflicts.
+    Here, the HelloWorld namespace is defined, which contains the program code.
+
+class Program
+
+    class is a blueprint for creating objects and encapsulates data and methods.
+    The Program class is the entry point of your application.
+
+
+static void Main(string[] args)
+
+    This is the main method, the starting point of execution in a C# program.
+    static means the method belongs to the class itself and not an instance of the class.
+    void means the method does not return a value.
+    string[] args allows you to pass arguments from the command line to the program.
+
+Console.WriteLine("Hello World!");
+
+    Console is a class in the System namespace that handles input and output.
+    WriteLine is a method that outputs the text provided inside the parentheses, followed by a new line.
+    "Hello World!" is the string being displayed.
+
+
+===================================================================================================================
+
+file saving:
+============
+fileName.cs
+
+======================================================================================================================
+
+Single-line Comments
+======================
+
+Single-line comments start with two forward slashes (//).
+
+Any text between // and the end of the line is ignored by C# (will not be executed).
+
+This example uses a single-line comment before a line of code:
+
+Console.WriteLine("Hello World!");  // This is a comment
+
+========================================================================================================================
+
+Data Type:
+===========
+
+int- stores integers (whole numbers), without decimals, such as 123 or -123
+double - stores floating point numbers, with decimals, such as 19.99 or -19.99
+char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+string - stores text, such as "Hello World". String values are surrounded by double quotes
+bool - stores values with two states: true or false
+
+-----------------------------------------------------------------------------------------------------------
+
+
+Syntax
+-----------
+type variableName = value;-------variable declaration.
+
+string name = "John";
+Console.WriteLine(name);
+
+
+===================================================================================================
+
+Multiple variables:
+=======================
+
+int x = 5, y = 6, z = 50;
+Console.WriteLine(x + y + z);
+
+int x, y, z;
+x = y = z = 50;
+Console.WriteLine(x + y + z);
+
+====================================================================================================
+
+
+example:
+============
+using System;
+
+namespace VariableTypes
+{
+    class Program
+    {
+        const double Pi = 3.14159;
+        readonly int readValue;
+        
+        public Program()
+        {
+            readValue = 100;
+        }
+
+        static void Main(string[] args)
+        {
+            byte a = 255;
+            sbyte b = -128;
+            short c = -32768;
+            ushort d = 65535;
+            int e = -2147483648;
+            uint f = 4294967295;
+            long g = -9223372036854775808;
+            ulong h = 18446744073709551615;
+
+            float i = 3.14f;
+            double j = 123.456;
+            decimal k = 78910.12345m;
+
+            char l = 'A';
+            bool m = true;
+
+            string n = "Hello, World!";
+            object o1 = 123;
+            object o2 = "C# Variables";
+            object o3 = 3.14;
+
+            int? nullableInt = null;
+
+            var p = 42;
+            var q = "Var Example";
+            var r = 3.14;
+
+            dynamic s = 1;
+            s = "Dynamic Type";
+            
+            Days today = Days.Monday;
+
+            Program program = new Program();
+            Console.WriteLine($"Const Pi: {Pi}, Readonly: {program.readValue}");
+            Console.WriteLine($"Byte: {a}, SByte: {b}, Short: {c}, UShort: {d}");
+            Console.WriteLine($"Int: {e}, UInt: {f}, Long: {g}, ULong: {h}");
+            Console.WriteLine($"Float: {i}, Double: {j}, Decimal: {k}");
+            Console.WriteLine($"Char: {l}, Bool: {m}, String: {n}");
+            Console.WriteLine($"Object: {o1}, {o2}, {o3}");
+            Console.WriteLine($"Nullable Int: {nullableInt ?? 0}");
+            Console.WriteLine($"Var: {p}, {q}, {r}");
+            Console.WriteLine($"Dynamic: {s}");
+            Console.WriteLine($"Enum Days: {today}");
+        }
+
+        enum Days { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
+    }
+}
+===================================================================================================================================
+
+Syntax of Enum
+================
+enum EnumName { Value1, Value2, Value3, ..., ValueN }
+
+Here:
+
+    EnumName is the name of the enumeration.
+    Value1, Value2, ... ValueN are the constants of the enumeration.
+
+By default, the underlying type of enum values is int, and their values start at 0 and increment by 1.
+
+==================================================================================================================================
+
+enum Days
+=========
+enum Days 
+{
+    Sunday,     // 0
+    Monday,     // 1
+    Tuesday,    // 2
+    Wednesday,  // 3
+    Thursday,   // 4
+    Friday,     // 5
+    Saturday    // 6
+}
+
+class Program
+{
+    static void Main()
+    {
+        Days today = Days.Monday;
+        Console.WriteLine(today);         // Output: Monday
+        Console.WriteLine((int)today);    // Output: 1
+        
+        Days tomorrow = (Days)2;          // Casting from int to enum
+        Console.WriteLine(tomorrow);      // Output: Tuesday
+    }
+}
+=========================================================================================================================================
+
+user input:
+===============
+Console.ReadLine() to get user input.it always string.
+
+ex:
+====
+Console.WriteLine("Enter your age:");
+int age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Your age is: " + age);
+
+====================================================================================================================================
+operator:
+==========
++ 	Addition 	Adds together two values 	
+- 	Subtraction 	Subtracts one value from another 
+* 	Multiplication 	Multiplies two values 	
+/ 	Division 	Divides one value by another.  ex:16/4----ans:4
+% 	Modulus 	Returns the division remainder.	ex:16%4---ans:0
+++ 	Increment 	Increases the value of a variable by 1 	x++ 
+
+	  int a=10;
+        
+	  Console.WriteLine(++a);
+  ----11      
+          Console.WriteLine(a);    ----11
+
+----------------------------------------------------
+
+	  int a=10;
+        
+	  Console.WriteLine(a++);
+  ----10      
+          Console.WriteLine(a);    ----11
+
+
+
+	   	
+-- 	Decrement 	Decreases the value of a variable by 1 	x--
+
+=====================================================================================================================================
+
+power:
+=====
+Console.WriteLine(Math.Pow(2,3)) -------8
+
+=====================================================================
+Assignment operator:
+==========================
+
+= 	x = 5 	x = 5 	
++= 	x += 3 	x = x + 3 	
+-= 	x -= 3 	x = x - 3 	
+*= 	x *= 3 	x = x * 3 	
+/= 	x /= 3 	x = x / 3 	
+%= 	x %= 3 	x = x % 3 	
+&= 	x &= 3 	x = x & 3 	
+|= 	x |= 3 	x = x | 3 	
+^= 	x ^= 3 	x = x ^ 3 	
+>>= 	x >>= 3 x = x >> 3 	
+<<= 	x <<= 3 x = x << 3 	
+
+====================================================================================================================================
+
+
+4) Logical operator:
+---------------------
+&&, ||, !
+
+and--&&:
+====
+T T-->T
+T F-->F
+F T-->F
+F F-->F
+
+or--||:
+----
+T T-->T
+T F-->T
+F T-->T
+F F-->F
+
+not-!:
+----
+T-->F
+F-->T
+
+=========================================================================
+ex:
+----
+int a=10
+int b=12
+bool c=False
+Console.WriteLine((a>5) && (a>12))------>False
+Console.WriteLine((a>5) or (a>12))------->True
+Console.WriteLine( !c)---------------->True
+============================================================================
+=========================================================================
+Bitwise operator:
+------------------
+
+bitwise &
+-------------
+
+4---->100
+5---->101
+
+     (4 & 5)----->100---->4
+		  101---->5  bitwise &
+		 -------------
+		  100---->4
+		--------------
+ANS:
+====
+4
+
+=============================================
+bitwise |
+============
+
+4---->100
+5---->101
+
+print(4 | 5)----->100---->4
+		  101---->5  bitwise |
+		 -------------
+		  101---->5
+		--------------
+ANS:
+====
+5
+
+================================================
+
+bitwise XOR: ^
+================
+
+ ^ :
+=====
+T ^ T----F
+T ^ F----T
+F ^ T----T
+F ^ F----F
+
+
+
+ex:
+===
+
+4---->100
+5---->101
+
+print(4  ^  5)----->100---->4
+		    101---->5  bitwise ^ 
+		 -------------
+		    001---->1
+		--------------
+ANS:
+====
+1
+
+=================================================================================
+bitwise Not ~:
+================
+
+ ~ :
+====
+a=10----->10+1---->(11)----change into negative----->-11
+a=-10---->-10+1---->(-9)--change into positive----->+9
+
+============================================================================
+
+>>----Right shift
+=====================
+
+4 >> 2
+
+4----->100
+remove lost 2 digit---->001----->ANS:1
+
+=======================================================================
+<<----Left shift
+=================
+
+4 << 2
+
+4----->100
+add lost two digit(0)---->10000--->ANS:16
+
+======================================================================
+
+programme:
+===========
+
+a=4
+b=5
+c=-10
+("a & b = ",a&b)
+("a | b = ",a|b)
+("a ^ b = ",a^b)
+(" ~ a = ",~a)
+(" ~ b = ",~b)
+(" ~ c = ",~c)
+("a >> 2 ",a>>2)
+("10 >> 2 ",10>>2)
+("10 << 2 ",10<<2)
+("4 >> 2",4>>2)
+("4 << 2",4<<2)
+
+output:
+==========
+
+a & b =  4
+a | b =  5
+a ^ b =  1
+ ~ a =  -5
+ ~ b =  -6
+ ~ c =  9
+a >> 2=  1
+10 >> 2=  2
+10 << 2=  40
+4 >> 2= 1
+4 << 2= 16
+5 << 2= 20
+
+=====================================================
+
+=============================================================================================================================================
+
+
+
+
+IF-ELSE:
+=========
+if (condition)
+{
+  // block of code to be executed if the condition is True
+} 
+else 
+{
+  // block of code to be executed if the condition is False
+}
+
+
+example:
+========
+int x = 20;
+int y = 18;
+if (x > y) 
+{
+  Console.WriteLine("x is greater than y");
+}
+
+=================================================================================================================
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int age = 25;
+        bool hasLicense = true;
+
+        if (age >= 18 && hasLicense)
+        {
+            Console.WriteLine("You are eligible to drive.");
+        }
+        else
+        {
+            Console.WriteLine("You are not eligible to drive.");
+        }
+
+      
+        bool isWeekend = true;
+        bool isHoliday = false;
+
+        if (isWeekend || isHoliday)
+        {
+            Console.WriteLine("You can relax today.");
+        }
+        else
+        {
+            Console.WriteLine("It's a working day.");
+        }
+    }
+}
+
+========================================================================================================================================
+
+ternary operation:
+===================
+condition ? value_if_true : value_if_false;
+
+
+ex:
+====
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int number = 10;
+        
+        // Using the ternary operator to check if the number is even or odd
+        string result = (number % 2 == 0) ? "Even" : "Odd";
+        
+        Console.WriteLine($"The number {number} is {result}.");
+    }
+}
+
+=====================================================================================================================
+
+1)Enter the letter. find is vowel or not?
+2)Enter 2 number between 1-150 and find which one is nearest to 100.
+3)Find the Month day count?
+	ex:month 5
+	   output:31 days
+4)Enter week day and find the day name?
+	ex:day 1
+	   output:Sunday
+5)find the digit of the number?
+	ex:123
+	output:3 digit number
+=========================================================================================================================
+second question:
+==================
+
+int a=60
+int b=110
+
+int a1
+int b1
+
+a1=a>100?a-100:100-a------>a1=40
+b1=b>100?b-100:100-6------>b1=10
+
+console.writeLine(a1,b1)
+
+a1>b1?console.writeLine("b is nearest to 100):b1>a1?console.writeLine("a is nearest to 100):console.writeLine("a and b is nearest to 100)
+
+============================================================================================================================================
+Switch Case:
+===============
+
+switch(expression) 
+{
+  case condition1:
+    // code block
+    break;
+  case condition2:
+    // code block
+    break;
+  default:
+    // code block
+    break;
+}
+  
+===============================================================================================
+
+ex:
+====
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a number (1-3): ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        switch (number)
+        {
+            case 1:
+                Console.WriteLine("You selected One.");
+                break;
+
+            case 2:
+                Console.WriteLine("You selected Two.");
+                break;
+
+            case 3:
+                Console.WriteLine("You selected Three.");
+                break;
+
+            default:
+                Console.WriteLine("Invalid choice! Please enter a number between 1 and 3.");
+                break;
+        }
+
+           }
+}
+
+
+
+// output:
+===========
+
+Enter a number (1-3): 1
+You selected One.
+==============================================================================================================================
+
+while loop:
+==============
+while (condition) 
+{
+  // code block to be executed
+}
+
+=============================================================================================================================
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int number = 1;
+
+        Console.WriteLine("Printing numbers from 1 to 5 using a while loop:");
+
+               while (number <= 5)
+        {
+            Console.WriteLine(number);
+            number++; 
+        }
+
+           }
+}
+
+
+// output:
+===============
+Printing numbers from 1 to 5 using a while loop:
+1
+2
+3
+4
+5
+========================================================================================================================
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string[] fruits = { "Apple", "Banana", "Cherry", "Mango" };
+        Console.WriteLine("For loop through an array:");
+        for (int i = 0; i < fruits.Length; i++)
+        {
+            Console.WriteLine($"Fruit: {fruits[i]}");
+        }
+    }
+}
+
+
+// output:
+==========
+For loop through an array:
+Fruit: Apple
+Fruit: Banana
+Fruit: Cherry
+Fruit: Mango
+
+
+======================================================================================================================
+
+1)Even or odd?
+	ex:
+	input:15
+	output:odd number
+	
+	input:20
+	ouput:Even number
+
+2)which one is greater and which one is less?
+	ex:
+	input1:12
+	input2:14
+
+	output:input1 is less than input2 and input2 is greater than input1
+
+	ex:
+	input1:16
+	input2:14
+
+	output:input2 is less than input1 and input1 is greater than input2
+
+3)find +ve or -ve
+	input:-2
+	output:Negative
+
+4)Divisible by 9?
+	input:10
+	output:not divisible by 9
+
+5)Vote Eligible?
+	input:12
+	output:not eligible for vote
+	
+	input:19
+	output:eligible for vote
+
+6)find user is Male or Female
+	input:Male
+	ouput:user is Male
+
+7)Write a code?input 1 or 0
+	if user enter 0 output will be False
+	if user enter 1 output will be True
+
+8)if input is 1 (or) 10 (or) 2 (or) 8 (or) 3 output will be Favorite number
+  if input is 7 (or) 4 (or) 6 (or) 5 (or) 9 output will be not  Favorite number
+
+9)find the total and avarage of the 5 subject?
+
+=========================================================================================================================================
+
+1)a=[1,2,3,4,5]
+  Add the number from list.
+  output: 15
+
+2)a=[1,2,3,4,5,6,7,8].Find how many odd number and how many even number in the list?
+
+3)Cube the number.
+   ex:input:2
+      output:8
+
+4)find circle area--->circle area formula is πr2(pi r square).
+   input:4
+   output:50.27
+
+5)Get the height from user.
+  if given height is less than 150, output will be small.
+  if given height is greater than or equal 150 and height less than 165, output will be Average Height.
+  if given height is greater than or equal 165 and height less than 195, output will be  Taller.
+  otherwise output will be Abnormal height.
+
+6)get the name,rollnumber,tamil, eng, maths mark from user.
+  if 3 subject total is greater than 90, output will be First class.
+  if 3 subject total is greater than 80, output will be Second class.
+  if 3 subject total is greater than 60, output will be third class.
+  if 3 subject total is greater  than or equal to 35, output will be Avarage.
+  otherwise fail.
+
+7)Get the Temparature from user.
+  if tem greater than or equal to 0 and less than 10, output will be Very cold weather.
+  if tem greater than or equal to 10 and less than 20, output will be cold weather.
+  if tem greater than or equal to 20 and less than 30, output will be Normal Weather.
+  if tem greater than or equal to 30 and less than 40, output will be Hot.
+  otherwise Very hot.
+
+8)Nexted if:
+
+Get the Electrycity UNIT from user.
+  if unit is upto 199----charge is 1.20 Rs
+  if unit is 200 and above but less than 400----charge is 1.50 Rs
+  if unit is 400 and above but less than 600----charge is 1.80 Rs
+  if unit is 600 and above ----charge is 2.00 Rs.
+
+find bill.
+suppose bill exceed RS. 400 the subcharge of 15% will be charged and minimum bill be should be RS. 100
+
+ex:
+input unit:300
+output:3450
+=========================================================================================================================
+Create an Array
+======================
+
+Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+To declare an array, define the variable type with square brackets:
+
+string[] cars;
+
+ex:
+====
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+
+int[] myNum = {10, 20, 30, 40};
+
+==============================================================================================================================
+
+1)string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+Console.WriteLine(cars[0]);
+// Outputs Volvo
+=======================================================================================================
+2)string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+Console.WriteLine(cars.Length);
+// Outputs 4
+=========================================================================================================
+
+1)
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 1, 2, 3, 4, 5 };
+        Console.WriteLine("First number: " + numbers[0]);
+        Console.WriteLine("Last number: " + numbers[4]);
+
+        Console.WriteLine("All numbers in the array:");
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            Console.WriteLine(numbers[i]);
+        }
+
+        numbers[2] = 10;
+
+        Console.WriteLine("\nAfter modifying the 3rd element:");
+        foreach (var num in numbers)
+        {
+            Console.WriteLine(num);
+        }
+    }
+}
+
+//output:
+=========
+1
+2
+3
+4
+5
+
+//output:
+=========
+1
+10
+3
+4
+5
+=====================================================================================================================
+
+2)
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        object[] mixedArray = { 1, "Hello", 3.14, true, 'A' };
+
+        foreach (var item in mixedArray)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+
+//1
+Hello
+3.14
+True
+A
+=====================================================================================================================
+List:
+=====
+a List is a collection class that is part of the System.Collections.Generic namespace. It is a dynamic array that can hold a collection of objects, and it can grow or shrink as needed. Unlike arrays, which have a fixed size, Lists allow you to add, remove, or modify elements at runtime.
+
+==========================================================================================================================
+
+1)
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        
+        List<int> numbers = new List<int>();
+
+        
+        numbers.Add(1);
+        numbers.Add(2);
+        numbers.Add(3);
+
+       
+        Console.WriteLine("First element: " + numbers[0]);  // Output: 1
+
+        
+        numbers.Remove(2); 
+
+        
+        Console.WriteLine("Remaining elements:");
+        foreach (var number in numbers)
+        {
+            Console.WriteLine(number);  // Output: 1, 3
+        }
+
+       
+        Console.WriteLine("Total elements: " + numbers.Count);  // Output: 2
+    }
+}
+=================================================================================================================================================
+
+Find:
+======
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+        // Find the first number greater than 5
+        int result = numbers.Find(n => n > 5);
+
+        Console.WriteLine("First number greater than 5: " + result);  // Output: 6
+    }
+}
+===================================================================================================================================================
+
+Where:
+=======
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+        // Filter numbers that are even
+        var evenNumbers = numbers.Where(n => n % 2 == 0);
+
+        Console.WriteLine("Even numbers:");
+        foreach (var num in evenNumbers)
+        {
+            Console.WriteLine(num);  // Output: 2, 4, 6, 8
+        }
+    }
+}
+==================================================================================================================================
+
+1)
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<object> mixedList = new List<object>();
+
+        mixedList.Add(42);
+        mixedList.Add("Hello");
+        mixedList.Add(3.14);
+        mixedList.Add(true);
+        mixedList.Add('A');
+
+        foreach (var item in mixedList)
+        {
+            Console.WriteLine(item);
+        }
+
+        foreach (var item in mixedList)
+        {
+            if (item is int)
+            {
+                Console.WriteLine("Integer: " + (int)item);
+            }
+            else if (item is string)
+            {
+                Console.WriteLine("String: " + (string)item);
+            }
+            else if (item is double)
+            {
+                Console.WriteLine("Double: " + (double)item);
+            }
+            else if (item is bool)
+            {
+                Console.WriteLine("Boolean: " + (bool)item);
+            }
+            else if (item is char)
+            {
+                Console.WriteLine("Char: " + (char)item);
+            }
+        }
+    }
+}
+
+// Output:
+============
+
+42
+Hello
+3.14
+True
+A
+Integer: 42
+String: Hello
+Double: 3.14
+Boolean: True
+Char: A
+
+==============================================================================================================================================
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<object> mixedList = new List<object>{"tamil","kalai",21,10};
+
+        mixedList.Add(42);
+        mixedList.Add("Hello");
+        mixedList.Add(3.14);
+        mixedList.Add(true);
+        mixedList.Add('A');
+
+        foreach (var item in mixedList)
+        {
+            Console.WriteLine(item);
+        }
+
+        foreach (var item in mixedList)
+        {
+            if (item is int)
+            {
+                Console.WriteLine("Integer: " + (int)item);
+            }
+            else if (item is string)
+            {
+                Console.WriteLine("String: " + (string)item);
+            }
+            else if (item is double)
+            {
+                Console.WriteLine("Double: " + (double)item);
+            }
+            else if (item is bool)
+            {
+                Console.WriteLine("Boolean: " + (bool)item);
+            }
+            else if (item is char)
+            {
+                Console.WriteLine("Char: " + (char)item);
+            }
+        }
+    }
+}
+
+//Output:
+==============
+
+tamil
+kalai
+21
+10
+42
+Hello
+3.14
+True
+A
+String: tamil
+String: kalai
+Integer: 21
+Integer: 10
+Integer: 42
+String: Hello
+Double: 3.14
+Boolean: True
+Char: A
+
+===================================================================================================================
+Methods:
+========
+In C#, a method is a block of code that performs a specific task and can be reused.
+Methods are defined within a class or a struct and can be invoked (called) to execute their logic. 
+They help organize code into smaller, manageable, and reusable parts.
+
+
+Key Features of Methods:
+
+    Encapsulation: Methods encapsulate a specific functionality.
+    Reusability: You can call the same method multiple times.
+    Parameters: Methods can accept input values (parameters).
+    Return Values: Methods can return a result.
+
+========================================================================================================================================================
+Instance Method
+=====================
+
+An instance method requires an object of the class to be called.
+-----------------------------------------------------------------------------------
+
+public class Example
+{
+        public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+}
+
+var example = new Example();
+int sum = example.Add(5, 10); // Output: 15
+==================================================================================================================================
+
+Static Method
+================
+A static method belongs to the class itself and does not require an object.
+
+-----------------------------------------------------------------------------------------
+public class Utility
+{
+   
+    public static int Multiply(int a, int b)
+    {
+        return a * b;
+    }
+}
+
+int result = Utility.Multiply(3, 4);
+
+=======================================================================================================================================
+
+Void Method
+================
+
+A method that does not return any value.
+------------------------------------------------------------------------------
+
+public class Printer
+{
+        public void PrintMessage(string message)
+    {
+        Console.WriteLine(message);
+    }
+}
+
+var printer = new Printer();
+printer.PrintMessage("Hello, World!");
+======================================================================================================================================
+
+Method with Parameters
+============================
+
+A method that accepts parameters.
+
+---------------------------------------------------------------------------------------------
+
+public class Calculator
+{
+    public int Subtract(int a, int b)
+    {
+        return a - b;
+    }
+}
+
+// Usage
+var calculator = new Calculator();
+int difference = calculator.Subtract(10, 4); // Output: 6
+
+===========================================================================================================================================
+
+Method Overloading
+=========================
+
+Same method name with different parameter lists.
+
+---------------------------------------------------------------------------------------
+
+public class Display
+{
+    public void Show(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+    public void Show(int number)
+    {
+        Console.WriteLine(number);
+    }
+}
+
+// Usage
+var display = new Display();
+display.Show("Overloading Example"); // Output: Overloading Example
+display.Show(42); // Output: 42
+
+=============================================================================================================================================
+
+Generic Method
+=========================
+
+A method that works with any data type.
+---------------------------------------------------------------------------------------
+
+public class Utility
+{
+    public T GetDefaultValue<T>()
+    {
+        return default(T);
+    }
+}
+
+// Usage
+var utility = new Utility();
+int defaultInt = utility.GetDefaultValue<int>(); // Output: 0
+string defaultString = utility.GetDefaultValue<string>(); // Output: null
+
+==================================================================================================================================================
+Recursive Method
+=========================
+A method that calls itself.
+---------------------------------------------------------------------------------------
+
+public class FactorialCalculator
+{
+    public int Factorial(int n)
+    {
+        if (n == 1) return 1;
+        return n * Factorial(n - 1);
+    }
+}
+
+// Usage
+var calculator = new FactorialCalculator();
+int result = calculator.Factorial(5); // Output: 120
+
+========================================================================================================================================================
+
+Extension Method
+=========================
+Adds a method to an existing type.
+---------------------------------------------------------------------------------------
+
+public static class StringExtensions
+{
+    public static int WordCount(this string str)
+    {
+        return str.Split(' ').Length;
+    }
+}
+
+// Usage
+string sentence = "Hello World from C#";
+int count = sentence.WordCount(); // Output: 4
+
+
+========================================================================================================================================================
+
+Abstract Method
+=========================
+A method that must be implemented by derived classes.
+---------------------------------------------------------------------------------------
+
+public abstract class Shape
+{
+    public abstract double GetArea();
+}
+
+public class Rectangle : Shape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public override double GetArea()
+    {
+        return Width * Height;
+    }
+}
+
+// Usage
+var rect = new Rectangle { Width = 5, Height = 10 };
+double area = rect.GetArea(); // Output: 50
+
+========================================================================================================================================================
+
+
+Async Method
+=========================
+An asynchronous method for tasks.
+---------------------------------------------------------------------------------------
+
+public async Task<string> GetMessageAsync()
+{
+    await Task.Delay(1000); // Simulate delay
+    return "Hello, Async!";
+}
+
+// Usage
+var message = await new Example().GetMessageAsync();
+
+========================================================================================================================================================
+
+
+Private Method
+=========================
+A method that is only accessible within the class.
+---------------------------------------------------------------------------------------
+
+public class Secret
+{
+    private void RevealSecret()
+    {
+        Console.WriteLine("This is private!");
+    }
+
+    public void ShowSecret()
+    {
+        RevealSecret();
+    }
+}
+
+// Usage
+var secret = new Secret();
+secret.ShowSecret(); // Output: This is private!
+
+========================================================================================================================================================
+
+
+Static Constructor for Initialization
+===========================================
+Static constructors initialize static members.
+---------------------------------------------------------------------------------------
+
+public class Configuration
+{
+    public static string Setting;
+
+    static Configuration()
+    {
+        Setting = "Initialized in static constructor";
+    }
+}
+
+// Usage
+Console.WriteLine(Configuration.Setting); // Output: Initialized in static constructor
+
+========================================================================================================================================================
+
+Indexer Method
+================
+Allows accessing an object like an array.
+---------------------------------------------------------------------------------------
+
+public class IndexerExample
+{
+    private string[] names = new string[5];
+
+    public string this[int index]
+    {
+        get => names[index];
+        set => names[index] = value;
+    }
+}
+
+// Usage
+var indexer = new IndexerExample();
+indexer[0] = "Alice";
+Console.WriteLine(indexer[0]); // Output: Alice
+
+========================================================================================================================================================
+
+Event Handling Method
+=========================
+Responds to events like button clicks.
+---------------------------------------------------------------------------------------
+
+public class Button
+{
+    public event Action Clicked;
+
+    public void Click()
+    {
+        Clicked?.Invoke();
+    }
+}
+
+// Usage
+var button = new Button();
+button.Clicked += () => Console.WriteLine("Button Clicked!");
+button.Click(); // Output: Button Clicked!
+
+==============================================================================================================================
+In C#, a constructor is a special method used to initialize objects of a class. It is automatically called when an instance (object) of the class is created.
+Constructors are used to set the initial values of the object's properties or to perform any setup operations when the object is created.
+
+
+using System;
+
+public class Car
+{
+    public string Model;
+    public int Year;
+
+    // Constructor with parameters
+    public Car(string model, int year)
+    {
+        Model = model;
+        Year = year;
+    }
+
+    // Method to display car details
+    public void Display()
+    {
+        Console.WriteLine("Model: " + Model + ", Year: " + Year);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Creating an object of the Car class and passing parameters to the constructor
+        Car myCar = new Car("Toyota", 2022);
+        
+        // Calling the method to display car details
+        myCar.Display();
+    }
+}
+===========================================================================================================================================
+
+Encapsulation
+
+Encapsulation is the process of wrapping data (variables) and methods into a single unit and restricting access using access modifiers.
+
+
+using System;
+
+public class BankAccount
+{
+    // Private field (data hiding)
+    private decimal balance;
+
+    // Public property to control access
+    public decimal Balance
+    {
+        get { return balance; }
+        private set
+        {
+            if (value >= 0)
+                balance = value;
+        }
+    }
+
+    // Constructor
+    public BankAccount(decimal initialBalance)
+    {
+        Balance = initialBalance; // Using property for validation
+    }
+
+    // Public method to access private data
+    public void Deposit(decimal amount)
+    {
+        if (amount > 0)
+        {
+            Balance += amount;
+            Console.WriteLine($"Deposited: {amount}, New Balance: {Balance}");
+        }
+        else
+        {
+            Console.WriteLine("Deposit amount must be positive.");
+        }
+    }
+
+    public void Withdraw(decimal amount)
+    {
+        if (amount > 0 && amount <= Balance)
+        {
+            Balance -= amount;
+            Console.WriteLine($"Withdrawn: {amount}, New Balance: {Balance}");
+        }
+        else
+        {
+            Console.WriteLine("Invalid withdrawal amount.");
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        BankAccount account = new BankAccount(1000);
+        account.Deposit(500);  // Output: Deposited: 500, New Balance: 1500
+        account.Withdraw(200); // Output: Withdraw: 200, New Balance: 1300
+    }
+}
+
+
+==============================================================================================================================================
+Inheritance
+
+Inheritance allows a class to inherit fields and methods from another class.
+
+using System;
+
+// Base class
+public class Vehicle
+{
+    public string Make { get; set; }
+    public string Model { get; set; }
+
+    public void Start()
+    {
+        Console.WriteLine("Vehicle is starting...");
+    }
+}
+
+// Derived class
+public class Car : Vehicle
+{
+    public int NumberOfDoors { get; set; }
+
+    public void Drive()
+    {
+        Console.WriteLine($"Driving a {Make} {Model} with {NumberOfDoors} doors.");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Car myCar = new Car
+        {
+            Make = "Toyota",
+            Model = "Corolla",
+            NumberOfDoors = 4
+        };
+
+        myCar.Start(); // Output: Vehicle is starting...
+        myCar.Drive(); // Output: Driving a Toyota Corolla with 4 doors.
+    }
+}
+
+
+================================================================================================================================
+
+
+Polymorphism
+
+Polymorphism allows methods in derived classes to have different implementations from the base class.
+
+
+using System;
+
+// Base class
+public class Shape
+{
+    public virtual void Draw()
+    {
+        Console.WriteLine("Drawing a shape.");
+    }
+}
+
+// Derived classes
+public class Circle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Drawing a circle.");
+    }
+}
+
+public class Rectangle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Drawing a rectangle.");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Shape myShape;
+
+        myShape = new Circle();
+        myShape.Draw(); // Output: Drawing a circle.
+
+        myShape = new Rectangle();
+        myShape.Draw(); // Output: Drawing a rectangle.
+    }
+}
+======================================================================================================================================================
+
+Abstraction
+
+Abstraction hides implementation details and shows only the functionality through abstract classes or interfaces.
+
+using System;
+
+// Abstract class
+public abstract class Animal
+{
+    public string Name { get; set; }
+
+    public Animal(string name)
+    {
+        Name = name;
+    }
+
+    // Abstract method
+    public abstract void Speak();
+}
+
+// Derived classes
+public class Dog : Animal
+{
+    public Dog(string name) : base(name) { }
+
+    public override void Speak()
+    {
+        Console.WriteLine($"{Name} says: Woof!");
+    }
+}
+
+public class Cat : Animal
+{
+    public Cat(string name) : base(name) { }
+
+    public override void Speak()
+    {
+        Console.WriteLine($"{Name} says: Meow!");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Animal dog = new Dog("Buddy");
+        dog.Speak(); // Output: Buddy says: Woof!
+
+        Animal cat = new Cat("Kitty");
+        cat.Speak(); // Output: Kitty says: Meow!
+    }
+}
+===================================================================================================================================================
+
+Encapsulation: Demonstrates data hiding with private fields and public properties/methods for controlled access.
+Inheritance: A derived class (Car) inherits from a base class (Vehicle).
+Polymorphism: The same method Draw() is implemented differently in Circle and Rectangle.
+Abstraction: Abstract class Animal provides a template, and derived classes (Dog and Cat) implement specific behavior.
+
+=====================================================================================================================================================
