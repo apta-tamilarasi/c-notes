@@ -618,6 +618,48 @@ class Program
 
 =====================================================================================================================
 
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Enter your gender like male/female: ");
+       string a=Console.ReadLine();
+  
+       Console.WriteLine ("Enter your age");
+      int b=Convert.ToInt32(Console.ReadLine());
+       
+       if(a=="male"){
+            Console.WriteLine ("user is He");
+            if(b>=21){
+                   Console.WriteLine ("he is eligible for marriage");
+            }
+            else{
+                   Console.WriteLine ("he is not eligible for marriage");
+            }
+       }
+       else if(a=="female"){
+              Console.WriteLine ("user is she");
+               if(b>=18){
+                   Console.WriteLine ("She is eligible for marriage");
+            }
+            else{
+                   Console.WriteLine ("She is not eligible for marriage");
+            }
+       }
+       else{
+              Console.WriteLine ("Enter correct gender");
+       }
+     
+      
+      
+    }
+}
+
+
+=====================================================================================================================
 1)Enter the letter. find is vowel or not?
 2)Enter 2 number between 1-150 and find which one is nearest to 100.
 3)Find the Month day count?
