@@ -562,6 +562,37 @@ class Program
 }
 
 ========================================================================================================================================
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Enter your mark ");
+       int a= Convert.ToInt32(Console.ReadLine());
+      
+       if(a>=90){
+             Console.WriteLine ("disniction");
+       }
+       else if(a>=70){
+             Console.WriteLine ("1st class");
+           
+       }
+       else if(a>=50){
+             Console.WriteLine ("2nd class");
+       }
+       else if(a>=35){
+             Console.WriteLine ("pass ");
+       }
+       else{
+             Console.WriteLine ("Fail ");
+       }
+    }
+}
+================================================================================================================
 
 ternary operation:
 ===================
