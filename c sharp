@@ -672,6 +672,7 @@ public class HelloWorld
 	ex:123
 	output:3 digit number
 =========================================================================================================================
+
 second question:
 ==================
 
@@ -689,6 +690,108 @@ console.writeLine(a1,b1)
 a1>b1?console.writeLine("b is nearest to 100):b1>a1?console.writeLine("a is nearest to 100):console.writeLine("a and b is nearest to 100)
 
 ============================================================================================================================================
+
+1)Even or odd?
+	ex:
+	input:15
+	output:odd number
+	
+	input:20
+	ouput:Even number
+
+2)which one is greater and which one is less?
+	ex:
+	input1:12
+	input2:14
+
+	output:input1 is less than input2 and input2 is greater than input1
+
+	ex:
+	input1:16
+	input2:14
+
+	output:input2 is less than input1 and input1 is greater than input2
+
+3)find +ve or -ve
+	input:-2
+	output:Negative
+
+4)Divisible by 9?
+	input:10
+	output:not divisible by 9
+
+5)Vote Eligible?
+	input:12
+	output:not eligible for vote
+	
+	input:19
+	output:eligible for vote
+
+6)find user is Male or Female
+	input:Male
+	ouput:user is Male
+
+7)Write a code?input 1 or 0
+	if user enter 0 output will be False
+	if user enter 1 output will be True
+
+8)if input is 1 (or) 10 (or) 2 (or) 8 (or) 3 output will be Favorite number
+  if input is 7 (or) 4 (or) 6 (or) 5 (or) 9 output will be not  Favorite number
+
+9)find the total and avarage of the 5 subject?
+
+=========================================================================================================================================
+
+1)a=[1,2,3,4,5]
+  Add the number from list.
+  output: 15
+
+2)a=[1,2,3,4,5,6,7,8].Find how many odd number and how many even number in the list?
+
+3)Cube the number.
+   ex:input:2
+      output:8
+
+4)find circle area--->circle area formula is πr2(pi r square).
+   input:4
+   output:50.27
+
+5)Get the height from user.
+  if given height is less than 150, output will be small.
+  if given height is greater than or equal 150 and height less than 165, output will be Average Height.
+  if given height is greater than or equal 165 and height less than 195, output will be  Taller.
+  otherwise output will be Abnormal height.
+
+6)get the name,rollnumber,tamil, eng, maths mark from user.
+  if 3 subject total is greater than 90, output will be First class.
+  if 3 subject total is greater than 80, output will be Second class.
+  if 3 subject total is greater than 60, output will be third class.
+  if 3 subject total is greater  than or equal to 35, output will be Avarage.
+  otherwise fail.
+
+7)Get the Temparature from user.
+  if tem greater than or equal to 0 and less than 10, output will be Very cold weather.
+  if tem greater than or equal to 10 and less than 20, output will be cold weather.
+  if tem greater than or equal to 20 and less than 30, output will be Normal Weather.
+  if tem greater than or equal to 30 and less than 40, output will be Hot.
+  otherwise Very hot.
+
+8)Nexted if:
+
+Get the Electrycity UNIT from user.
+  if unit is upto 199----charge is 1.20 Rs
+  if unit is 200 and above but less than 400----charge is 1.50 Rs
+  if unit is 400 and above but less than 600----charge is 1.80 Rs
+  if unit is 600 and above ----charge is 2.00 Rs.
+
+find bill.
+suppose bill exceed RS. 400 the subcharge of 15% will be charged and minimum bill be should be RS. 100
+
+ex:
+input unit:300
+output:3450
+=========================================================================================================================
+
 Switch Case:
 ===============
 
@@ -836,110 +939,220 @@ Fruit: Apple
 Fruit: Banana
 Fruit: Cherry
 Fruit: Mango
+===================================================================================================================================
+C# For Loop Questions
+=============================
 
+1. Print numbers from 1 to 10 using a for loop.
 
-======================================================================================================================
+2. Print all even numbers between 1 and 100 using a for loop.
 
-1)Even or odd?
-	ex:
-	input:15
-	output:odd number
-	
-	input:20
-	ouput:Even number
+3. Find the factorial of a given number using a for loop.
 
-2)which one is greater and which one is less?
-	ex:
-	input1:12
-	input2:14
+4. Print the multiplication table of a given number using a for loop.
 
-	output:input1 is less than input2 and input2 is greater than input1
+5. Calculate the sum of the first N natural numbers using a for loop.
 
-	ex:
-	input1:16
-	input2:14
+=============================
+C# While Loop Questions
+=============================
 
-	output:input2 is less than input1 and input1 is greater than input2
+6. Print numbers from 1 to 10 using a while loop.
 
-3)find +ve or -ve
-	input:-2
-	output:Negative
+7. Find the sum of the digits of a number using a while loop.
 
-4)Divisible by 9?
-	input:10
-	output:not divisible by 9
+8. Reverse a given number using a while loop.
 
-5)Vote Eligible?
-	input:12
-	output:not eligible for vote
-	
-	input:19
-	output:eligible for vote
+9. Check if a number is a palindrome using a while loop.
 
-6)find user is Male or Female
-	input:Male
-	ouput:user is Male
+10. Generate Fibonacci series up to N terms using a while loop.
 
-7)Write a code?input 1 or 0
-	if user enter 0 output will be False
-	if user enter 1 output will be True
+=============================
+C# Switch Case Questions
+=============================
 
-8)if input is 1 (or) 10 (or) 2 (or) 8 (or) 3 output will be Favorite number
-  if input is 7 (or) 4 (or) 6 (or) 5 (or) 9 output will be not  Favorite number
+11. Build a simple calculator using switch case (+, -, *, /).
 
-9)find the total and avarage of the 5 subject?
+12. Display the day of the week based on user input (1 to 7) using switch case.
 
-=========================================================================================================================================
+13. Check if a character is a vowel or consonant using switch case.
 
-1)a=[1,2,3,4,5]
-  Add the number from list.
-  output: 15
+14. Print the number of days in a month (1-12) using switch case.
 
-2)a=[1,2,3,4,5,6,7,8].Find how many odd number and how many even number in the list?
+15. Display the grade based on marks using switch case.
+==============================================================================================================================
 
-3)Cube the number.
-   ex:input:2
-      output:8
+C# For Loop Questions and Answers
+=============================
 
-4)find circle area--->circle area formula is πr2(pi r square).
-   input:4
-   output:50.27
+1. Print numbers from 1 to 10 using a for loop.
+Answer:
+for (int i = 1; i <= 10; i++) {
+    Console.WriteLine(i);
+}
+--------------------------------------------------------------------------------------
+2. Print all even numbers between 1 and 100 using a for loop.
+Answer:
+for (int i = 2; i <= 100; i += 2) {
+    Console.WriteLine(i);
+}
+----------------------------------------------------------------------------------------
+3. Find the factorial of a given number using a for loop.
+Answer:
+int num = 5, fact = 1;
+for (int i = 1; i <= num; i++) {
+    fact *= i;
+}
+Console.WriteLine("Factorial: " + fact);
+---------------------------------------------------------------------------------------
+4. Print the multiplication table of a given number using a for loop.
+Answer:
+int n = 5;
+for (int i = 1; i <= 10; i++) {
+    Console.WriteLine($"{n} x {i} = {n * i}");
+}
+-----------------------------------------------------------------------------------------
+5. Calculate the sum of the first N natural numbers using a for loop.
+Answer:
+int n = 100, sum = 0;
+for (int i = 1; i <= n; i++) {
+    sum += i;
+}
+Console.WriteLine("Sum: " + sum);
 
-5)Get the height from user.
-  if given height is less than 150, output will be small.
-  if given height is greater than or equal 150 and height less than 165, output will be Average Height.
-  if given height is greater than or equal 165 and height less than 195, output will be  Taller.
-  otherwise output will be Abnormal height.
+=============================
+C# While Loop Questions and Answers
+=============================
 
-6)get the name,rollnumber,tamil, eng, maths mark from user.
-  if 3 subject total is greater than 90, output will be First class.
-  if 3 subject total is greater than 80, output will be Second class.
-  if 3 subject total is greater than 60, output will be third class.
-  if 3 subject total is greater  than or equal to 35, output will be Avarage.
-  otherwise fail.
+6. Print numbers from 1 to 10 using a while loop.
+Answer:
+int i = 1;
+while (i <= 10) {
+    Console.WriteLine(i);
+    i++;
+}
+------------------------------------------------------------------------------------------
+7. Find the sum of the digits of a number using a while loop.
+Answer:
+int number = 1234, sum = 0;
+while (number > 0) {
+    sum += number % 10;
+    number /= 10;
+}
+Console.WriteLine("Sum: " + sum);
+-------------------------------------------------------------------------------------------
+8. Reverse a given number using a while loop.
+Answer:
+int number = 1234, reverse = 0;
+while (number > 0) {
+    reverse = reverse * 10 + number % 10;
+    number /= 10;
+}
+Console.WriteLine("Reversed: " + reverse);
+----------------------------------------------------------------------------------------------
+9. Check if a number is a palindrome using a while loop.
+Answer:
+int num = 121, rev = 0, temp = num;
+while (temp > 0) {
+    rev = rev * 10 + temp % 10;
+    temp /= 10;
+}
+Console.WriteLine(num == rev ? "Palindrome" : "Not Palindrome");
+-------------------------------------------------------------------------------------------------------
+10. Generate Fibonacci series up to N terms using a while loop.
+Answer:
+int n = 10, a = 0, b = 1, next, i = 0;
+while (i < n) {
+    Console.Write(a + " ");
+    next = a + b;
+    a = b;
+    b = next;
+    i++;
+}
 
-7)Get the Temparature from user.
-  if tem greater than or equal to 0 and less than 10, output will be Very cold weather.
-  if tem greater than or equal to 10 and less than 20, output will be cold weather.
-  if tem greater than or equal to 20 and less than 30, output will be Normal Weather.
-  if tem greater than or equal to 30 and less than 40, output will be Hot.
-  otherwise Very hot.
+=============================
+C# Switch Case Questions and Answers
+=============================
 
-8)Nexted if:
+11. Build a simple calculator using switch case (+, -, *, /).
+Answer:
+double a = 10, b = 5;
+char op = '+';
+switch (op) {
+    case '+': Console.WriteLine(a + b); break;
+    case '-': Console.WriteLine(a - b); break;
+    case '*': Console.WriteLine(a * b); break;
+    case '/': Console.WriteLine(b != 0 ? a / b : 0); break;
+    default: Console.WriteLine("Invalid"); break;
+}
+---------------------------------------------------------------------------------------------------
+12. Display the day of the week based on user input (1 to 7) using switch case.
+Answer:
+int day = 2;
+switch (day) {
+    case 1: Console.WriteLine("Sunday"); break;
+    case 2: Console.WriteLine("Monday"); break;
+    case 3: Console.WriteLine("Tuesday"); break;
+    case 4: Console.WriteLine("Wednesday"); break;
+    case 5: Console.WriteLine("Thursday"); break;
+    case 6: Console.WriteLine("Friday"); break;
+    case 7: Console.WriteLine("Saturday"); break;
+    default: Console.WriteLine("Invalid"); break;
+}
+-------------------------------------------------------------------------------------
+13. Check if a character is a vowel or consonant using switch case.
+Answer:
+char ch = 'e';
+switch (ch) {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+        Console.WriteLine("Vowel");
+        break;
+    default:
+        Console.WriteLine("Consonant");
+        break;
+}
+-------------------------------------------------------------------------------
+14. Print the number of days in a month (1-12) using switch case.
+Answer:
+int month = 2;
+switch (month) {
+    case 2: Console.WriteLine("28 or 29 days"); break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        Console.WriteLine("30 days"); break;
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        Console.WriteLine("31 days"); break;
+    default:
+        Console.WriteLine("Invalid month"); break;
+}
 
-Get the Electrycity UNIT from user.
-  if unit is upto 199----charge is 1.20 Rs
-  if unit is 200 and above but less than 400----charge is 1.50 Rs
-  if unit is 400 and above but less than 600----charge is 1.80 Rs
-  if unit is 600 and above ----charge is 2.00 Rs.
+-----------------------------------------------------------------------------------------
 
-find bill.
-suppose bill exceed RS. 400 the subcharge of 15% will be charged and minimum bill be should be RS. 100
+15. Display the grade based on marks using switch case.
+Answer:
+int marks = 85;
+switch (marks / 10) {
+    case 10:
+    case 9: Console.WriteLine("Grade A"); break;
+    case 8: Console.WriteLine("Grade B"); break;
+    case 7: Console.WriteLine("Grade C"); break;
+    case 6: Console.WriteLine("Grade D"); break;
+    default: Console.WriteLine("Grade F"); break;
 
-ex:
-input unit:300
-output:3450
-=========================================================================================================================
+=====================================================================================================================================
+
 Create an Array
 ======================
 
