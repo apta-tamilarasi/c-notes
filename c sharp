@@ -1467,6 +1467,125 @@ Boolean: True
 Char: A
 
 ===================================================================================================================
+List Method Questions (Where, Find, ForEach)
+=============================================
+
+1. Write a C# program to find all even numbers in a list using the `Where` method.
+
+2. Given a list of strings, use `Find` to get the first string that starts with the letter 'A'.
+
+3. Use `ForEach` to print all elements of a list of integers.
+
+4. What is the difference between `Where` and `Find` in C#?
+
+5. How can you use `Where` to filter students whose marks are greater than 50?
+
+6. Create a list of products with properties `Name` and `Price`. Use `Find` to get the first product with price less than 100.
+
+7. Use `ForEach` to increase every number in a list of integers by 10 and print the result.
+
+8. How do you combine `Where` and `ForEach` to print only the names of employees older than 30?
+
+9. Can `ForEach` be used on the result of a `Where` clause? Demonstrate with an example.
+
+10. Use `Find` to get the first number divisible by 7 from a list. What will happen if no such number is found?
+
+===============================================================================================================================
+C# List Method Questions & Answers (Where, Find, ForEach)
+================================================================
+
+1. Write a C# program to find all even numbers in a list using the `Where` method.
+Answer:
+```csharp
+var numbers = new List<int> { 1, 2, 3, 4, 5, 6 };
+var evenNumbers = numbers.Where(n => n % 2 == 0);
+foreach (var num in evenNumbers)
+    Console.WriteLine(num);
+```
+------------------------------------------------------------------------------------------------------------------------------------
+
+2. Given a list of strings, use `Find` to get the first string that starts with the letter 'A'.
+Answer:
+```csharp
+var names = new List<string> { "John", "Alice", "Bob" };
+var result = names.Find(name => name.StartsWith("A"));
+Console.WriteLine(result);
+```
+------------------------------------------------------------------------------------------------------------------------------------
+
+3. Use `ForEach` to print all elements of a list of integers.
+Answer:
+```csharp
+var numbers = new List<int> { 1, 2, 3, 4 };
+numbers.ForEach(n => Console.WriteLine(n));
+```
+------------------------------------------------------------------------------------------------------------------------------------
+
+4. What is the difference between `Where` and `Find` in C#?
+Answer:
+- `Find` returns the first matching element or null if not found.
+- `Where` returns a collection of all matching elements.
+------------------------------------------------------------------------------------------------------------------------------------
+
+5. How can you use `Where` to filter students whose marks are greater than 50?
+Answer:
+```csharp
+var students = new List<int> { 45, 55, 70, 30 };
+var passed = students.Where(m => m > 50);
+foreach (var mark in passed)
+    Console.WriteLine(mark);
+```
+------------------------------------------------------------------------------------------------------------------------------------
+
+6. Create a list of products with properties `Name` and `Price`. Use `Find` to get the first product with price less than 100.
+Answer:
+```csharp
+var products = new List<Product> {
+    new Product("Pen", 50),
+    new Product("Notebook", 120)
+};
+var cheapProduct = products.Find(p => p.Price < 100);
+Console.WriteLine(cheapProduct?.Name);
+```
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+7. Use `ForEach` to increase every number in a list of integers by 10 and print the result.
+Answer:
+```csharp
+var numbers = new List<int> { 10, 20, 30 };
+numbers.ForEach(n => Console.WriteLine(n + 10));
+```
+------------------------------------------------------------------------------------------------------------------------------------
+
+8. How do you combine `Where` and `ForEach` to print only the names of employees older than 30?
+Answer:
+```csharp
+var employees = new List<Employee> {
+    new Employee("John", 28),
+    new Employee("Mary", 35)
+};
+employees.Where(e => e.Age > 30).ToList()
+         .ForEach(e => Console.WriteLine(e.Name));
+```
+------------------------------------------------------------------------------------------------------------------------------------
+
+9. Can `ForEach` be used on the result of a `Where` clause? Demonstrate with an example.
+Answer:
+```csharp
+var numbers = new List<int> { 1, 2, 3, 4, 5 };
+numbers.Where(n => n % 2 == 0).ToList()
+       .ForEach(n => Console.WriteLine(n));
+------------------------------------------------------------------------------------------------------------------------------------
+
+10. Use `Find` to get the first number divisible by 7 from a list. What will happen if no such number is found?
+Answer:
+```csharp
+var numbers = new List<int> { 1, 2, 3, 4 };
+var result = numbers.Find(n => n % 7 == 0);
+Console.WriteLine(result == 0 ? "Not found" : result.ToString());
+===========================================================================================================================================
+
 Methods:
 ========
 In C#, a method is a block of code that performs a specific task and can be reused.
