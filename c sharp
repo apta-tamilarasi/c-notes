@@ -1637,6 +1637,52 @@ public class Utility
 int result = Utility.Multiply(3, 4);
 
 =======================================================================================================================================
+Example:
+========
+using System;
+
+namespace StaticVsInstanceMethods
+{
+    public class Calculator
+    {
+        // Static method
+        public static int AddStatic(int a, int b)
+        {
+            return a + b;
+        }
+
+        // Instance method
+        public int AddInstance(int a, int b)
+        {
+            return a + b;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter 1st value");
+           int a=Convert.ToInt32( Console.ReadLine());
+           
+           Console.WriteLine("Enter 2st value");
+           int b=Convert.ToInt32( Console.ReadLine());
+           
+            // Calling static method
+            int resultStatic = Calculator.AddStatic(a, b);
+            Console.WriteLine($"Static result: {resultStatic}");
+
+            // Calling instance method
+            Calculator calculator = new Calculator();
+            int resultInstance = calculator.AddInstance(a, b);
+            Console.WriteLine($"Instance result: {resultInstance}");
+
+           
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
 
 Void Method
 ================
