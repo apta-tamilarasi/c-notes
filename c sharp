@@ -2182,6 +2182,165 @@ public async Task<string> GetMessageAsync()
 var message = await new Example().GetMessageAsync();
 
 ========================================================================================================================================================
+Example:
+============
+using System;
+using System.Threading.Tasks;
+
+class AsyncAwaitExample
+{
+    // Asynchronous method
+    static async Task<string> GetDataAsync()
+    {
+        Console.WriteLine("Getting data... (please wait 3 seconds)");
+        await Task.Delay(3000); // simulate delay
+        return "📦 Data received successfully!";
+    }
+
+    static async Task Main(string[] args)
+    {
+        Console.WriteLine("Start of Main Method");
+
+        // Call the async method
+        string result = await GetDataAsync();
+
+        Console.WriteLine("Result: " + result);
+        Console.WriteLine("End of Main Method");
+    }
+}
+
+output:
+=======
+Start of Main Method
+Getting data... (please wait 3 seconds)
+(Result appears after 3 seconds)
+Result: 📦 Data received successfully!
+End of Main Method
+==============================================================================================================================================
+API CALL:
+==========
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+class ApiAsyncExample
+{
+    // Asynchronous method to call API
+    static async Task<string> GetApiDataAsync()
+    {
+        using (HttpClient client = new HttpClient())
+        {
+            try
+            {
+                Console.WriteLine("Sending request to API...");
+                HttpResponseMessage response = await client.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
+
+                response.EnsureSuccessStatusCode(); // Throws if not 200 OK
+
+                string responseBody = await response.Content.ReadAsStringAsync();
+
+                return responseBody;
+            }
+            catch (HttpRequestException e)
+            {
+                return $"Error: {e.Message}";
+            }
+        }
+    }
+
+    // Main method
+    static async Task Main(string[] args)
+    {
+        Console.WriteLine("API Call Started...");
+
+        string result = await GetApiDataAsync();
+
+        Console.WriteLine("Response:");
+        Console.WriteLine(result);
+
+        Console.WriteLine("API Call Finished.");
+    }
+}
+
+OUTPUT:
+=========
+API Call Started...
+Sending request to API...
+Response:
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "..."
+}
+API Call Finished.
+==================================================================================================================================
+2)
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+class AsyncPostExample
+{
+    // Asynchronous method to send POST request
+    static async Task<string> PostDataAsync()
+    {
+        using (HttpClient client = new HttpClient())
+        {
+            // Create JSON content
+            string jsonData = @"{
+                ""title"": ""VTeck Test Title"",
+                ""body"": ""This is a test body from async/await example."",
+                ""userId"": 10
+            }";
+
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+            try
+            {
+                Console.WriteLine("Sending POST request...");
+                HttpResponseMessage response = await client.PostAsync("https://jsonplaceholder.typicode.com/posts", content);
+
+                response.EnsureSuccessStatusCode();
+
+                string responseBody = await response.Content.ReadAsStringAsync();
+
+                return $"✅ Success:\n{responseBody}";
+            }
+            catch (HttpRequestException e)
+            {
+                return $"❌ Error: {e.Message}";
+            }
+        }
+    }
+
+    static async Task Main(string[] args)
+    {
+        Console.WriteLine("POST Request Started...");
+        
+        string result = await PostDataAsync();
+
+        Console.WriteLine(result);
+
+        Console.WriteLine("POST Request Finished.");
+    }
+}
+
+OUTPUT:
+========
+
+POST Request Started...
+Sending POST request...
+✅ Success:
+{
+  "title": "VTeck Test Title",
+  "body": "This is a test body from async/await example.",
+  "userId": 10,
+  "id": 101
+}
+POST Request Finished.
+=======================================================================================================================================
 
 
 Private Method
