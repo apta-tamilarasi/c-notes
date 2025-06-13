@@ -2432,6 +2432,275 @@ button.Clicked += () => Console.WriteLine("Button Clicked!");
 button.Click(); // Output: Button Clicked!
 
 ==============================================================================================================================
+Private method:
+================
+using System;
+
+namespace PrivateMethodExample
+{
+    class Calculator
+    {
+        // Public method that can be accessed outside the class
+        public void PerformCalculation(int a, int b)
+        {
+            int result = AddNumbers(a, b); // Calling private method inside the class
+            Console.WriteLine("Sum: " + result);
+        }
+
+        // Private method - only accessible within this class
+        private int AddNumbers(int x, int y)
+        {
+            return x + y;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Calculator calc = new Calculator();
+
+            // Calling public method
+            calc.PerformCalculation(5, 10);
+
+            // ❌ Error if you try this: 
+            // int result = calc.AddNumbers(5, 10);  // This line would cause a compile-time error because AddNumbers is private
+        }
+    }
+}
+
+
+output:15
+==================≠≠===================================================================================================================================
+
+// Example 1: Static Constructor
+using System;
+class StaticExample
+{
+    public static int Count;
+
+    static StaticExample()
+    {
+        Count = 100;
+        Console.WriteLine("Static constructor called");
+    }
+
+    public StaticExample()
+    {
+        Console.WriteLine("Instance constructor called");
+    }
+}
+
+// Example 2: Indexer
+class IndexerExample
+{
+    private string[] names = new string[5];
+
+    public string this[int index]
+    {
+        get { return names[index]; }
+        set { names[index] = value; }
+    }
+}
+
+// Example 3: Event Handling
+public class Publisher
+{
+    public delegate void Notify();  // delegate
+    public event Notify OnPublish;  // event
+
+    public void Publish()
+    {
+        Console.WriteLine("Publishing...");
+        OnPublish?.Invoke();  // raise event
+    }
+}
+
+public class Subscriber
+{
+    public void OnPublished()
+    {
+        Console.WriteLine("Subscriber received the event.");
+    }
+}
+
+// Main Program to demonstrate all
+class Program
+{
+    static void Main()
+    {
+        // Static Constructor Demo
+        StaticExample obj1 = new StaticExample();
+        Console.WriteLine("Count: " + StaticExample.Count);
+
+        // Indexer Demo
+        IndexerExample indexer = new IndexerExample();
+        indexer[0] = "Alice";
+        indexer[1] = "Bob";
+        Console.WriteLine("Indexer[0]: " + indexer[0]);
+        Console.WriteLine("Indexer[1]: " + indexer[1]);
+
+        // Event Handling Demo
+        Publisher pub = new Publisher();
+        Subscriber sub = new Subscriber();
+
+        pub.OnPublish += sub.OnPublished;  // subscribing
+        pub.Publish();  // triggering event
+    }
+}
+
+output:
+_________
+Static constructor called  
+Instance constructor called  
+Count: 100  
+Indexer[0]: Alice  
+Indexer[1]: Bob  
+Publishing...  
+Subscriber received the event.
+========================================================================================================================================================================
+
+Events Example:
+================
+using System;
+
+// 1. Simple Event Handling
+public class Button
+{
+    public delegate void ClickHandler();
+    public event ClickHandler OnClick;
+
+    public void Click()
+    {
+        Console.WriteLine("Button clicked!");
+        OnClick?.Invoke();
+    }
+}
+
+public class Handler
+{
+    public void ShowMessage()
+    {
+        Console.WriteLine("Handler received the button click.");
+    }
+}
+
+// 2. Event with EventArgs
+public class Alarm
+{
+    public event EventHandler<EventArgs> OnAlarm;
+
+    public void TriggerAlarm()
+    {
+        Console.WriteLine("Alarm triggered.");
+        OnAlarm?.Invoke(this, EventArgs.Empty);
+    }
+}
+
+// 3. Custom EventArgs
+public class TemperatureEventArgs : EventArgs
+{
+    public int Temperature { get; set; }
+}
+
+public class Thermostat
+{
+    public event EventHandler<TemperatureEventArgs> TemperatureChanged;
+
+    public void ChangeTemperature(int temp)
+    {
+        Console.WriteLine($"Temperature set to {temp}°C");
+        TemperatureChanged?.Invoke(this, new TemperatureEventArgs { Temperature = temp });
+    }
+}
+
+public class TempDisplay
+{
+    public void DisplayTemp(object sender, TemperatureEventArgs e)
+    {
+        Console.WriteLine($"Displaying temperature: {e.Temperature}°C");
+    }
+}
+
+// 4. Multicast Delegate with Events
+public class MultiEvent
+{
+    public delegate void MultiHandler();
+    public event MultiHandler OnMultiEvent;
+
+    public void Trigger()
+    {
+        Console.WriteLine("Multicast event triggered.");
+        OnMultiEvent?.Invoke();
+    }
+}
+
+public class First
+{
+    public void Respond() => Console.WriteLine("First responded.");
+}
+
+public class Second
+{
+    public void Respond() => Console.WriteLine("Second responded.");
+}
+
+// Main Program
+class Program
+{
+    static void Main()
+    {
+        // 1. Simple Event Handling
+        Button btn = new Button();
+        Handler handler = new Handler();
+        btn.OnClick += handler.ShowMessage;
+        btn.Click();
+
+        // 2. Event with EventArgs
+        Alarm alarm = new Alarm();
+        alarm.OnAlarm += (sender, e) => Console.WriteLine("Alarm event received.");
+        alarm.TriggerAlarm();
+
+        // 3. Custom EventArgs
+        Thermostat thermostat = new Thermostat();
+        TempDisplay display = new TempDisplay();
+        thermostat.TemperatureChanged += display.DisplayTemp;
+        thermostat.ChangeTemperature(27);
+
+        // 4. Multicast Event Handling
+        MultiEvent multi = new MultiEvent();
+        First f = new First();
+        Second s = new Second();
+        multi.OnMultiEvent += f.Respond;
+        multi.OnMultiEvent += s.Respond;
+        multi.Trigger();
+    }
+}
+
+output:
+________
+
+Static constructor called
+Instance constructor called
+Count: 100
+
+Indexer[0]: Alice
+Indexer[1]: Bob
+
+Button clicked!
+Handler received the button click.
+
+Alarm triggered.
+Alarm event received.
+
+Temperature set to 27°C
+Displaying temperature: 27°C
+
+Multicast event triggered.
+First responded.
+Second responded.
+
+============================================================================================================================
 In C#, a constructor is a special method used to initialize objects of a class. It is automatically called when an instance (object) of the class is created.
 Constructors are used to set the initial values of the object's properties or to perform any setup operations when the object is created.
 
@@ -2696,3 +2965,140 @@ Polymorphism: The same method Draw() is implemented differently in Circle and Re
 Abstraction: Abstract class Animal provides a template, and derived classes (Dog and Cat) implement specific behavior.
 
 =====================================================================================================================================================
+
+All Example:
+_____________
+
+// 1. Encapsulation
+class Person
+{
+    private string name;
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+}
+
+// 2. Inheritance
+class Animal
+{
+    public void Eat()
+    {
+        Console.WriteLine("Animal is eating.");
+    }
+}
+
+class Dog : Animal
+{
+    public void Bark()
+    {
+        Console.WriteLine("Dog is barking.");
+    }
+}
+
+// 3. Polymorphism - Compile Time (Method Overloading)
+class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public double Add(double a, double b)
+    {
+        return a + b;
+    }
+}
+
+// 4. Polymorphism - Run Time (Method Overriding)
+class Shape
+{
+    public virtual void Draw()
+    {
+        Console.WriteLine("Drawing Shape");
+    }
+}
+
+class Circle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Drawing Circle");
+    }
+}
+
+// 5. Abstraction
+abstract class Vehicle
+{
+    public abstract void Start();
+}
+
+class Car : Vehicle
+{
+    public override void Start()
+    {
+        Console.WriteLine("Car started.");
+    }
+}
+
+// 6. Interface
+interface IWorker
+{
+    void Work();
+}
+
+class Employee : IWorker
+{
+    public void Work()
+    {
+        Console.WriteLine("Employee is working.");
+    }
+}
+
+// Main Program
+class Program
+{
+    static void Main()
+    {
+        // Encapsulation
+        Person p = new Person();
+        p.Name = "John";
+        Console.WriteLine("Person Name: " + p.Name);
+
+        // Inheritance
+        Dog d = new Dog();
+        d.Eat();
+        d.Bark();
+
+        // Polymorphism - Method Overloading
+        Calculator calc = new Calculator();
+        Console.WriteLine("Add(int, int): " + calc.Add(5, 3));
+        Console.WriteLine("Add(double, double): " + calc.Add(2.5, 3.5));
+
+        // Polymorphism - Method Overriding
+        Shape s = new Circle();
+        s.Draw();
+
+        // Abstraction
+        Vehicle v = new Car();
+        v.Start();
+
+        // Interface
+        IWorker emp = new Employee();
+        emp.Work();
+    }
+}
+
+
+output:
+________
+Person Name: John
+Animal is eating.
+Dog is barking.
+Add(int, int): 8
+Add(double, double): 6
+Drawing Circle
+Car started.
+Employee is working.
+
